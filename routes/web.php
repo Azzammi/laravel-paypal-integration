@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('handle-payment', HandlePaymentController::class);
-Route::get('cancel-payment', CancelPaymentController::class);
-Route::get('payment-success', SuccessPaymentController::class);
+Route::view('payment', 'paypal.index')->name('create.payment');
+Route::get('handle-payment', HandlePaymentController::class)->name('make.payment');
+Route::get('cancel-payment', CancelPaymentController::class)->name('cancel.payment');
+Route::get('payment-success', SuccessPaymentController::class)->name('success.payment');

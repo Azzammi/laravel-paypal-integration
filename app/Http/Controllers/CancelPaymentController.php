@@ -8,6 +8,7 @@ class CancelPaymentController extends Controller
 {
     public function __invoke(Request $request)
     {
-        dd("Your payment has been declined. The payment cancelation page goes here !");
+        return redirect()->route('create.payment')
+                        ->with('error', $response['message'] ?? 'You have canceled the transaction. ');
     }
 }
