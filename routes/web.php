@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CancelPaymentController;
+use App\Http\Controllers\HandlePaymentController;
+use App\Http\Controllers\SuccessPaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('handle-payment', HandlePaymentController::class);
+Route::get('cancel-payment', CancelPaymentController::class);
+Route::get('payment-success', SuccessPaymentController::class);
